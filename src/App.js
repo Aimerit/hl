@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { ChakraProvider, CSSReset } from '@chakra-ui/react';
+
+import { publicRoutes } from './routes';
+import theme from './config/theme';
+
+import NotificationProvider from './components/providers/Notification';
+import PublicRoute from './components/helpers/PublicRoute';
+
+function displayPublicRoutes() {
+  return publicRoutes.map(({ key, path, component }) => <PublicRoute key={key} path={path} component={component} />);
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider theme={theme}>
+      <CSSReset />
+
+      <NotificationProvider>
+        <Router>
+          <Switch>{displayPublicRoutes()}</Switch>
+        </Router>
+      </NotificationProvider>
+    </ChakraProvider>
   );
 }
 

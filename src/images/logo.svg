@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1880" height="1880" viewBox="0 0 1880 1880">
+  <g id="Group_2" data-name="Group 2" transform="translate(-870 -916)">
+    <circle id="Ellipse_4" data-name="Ellipse 4" cx="940" cy="940" r="940" transform="translate(870 916)" fill="#8e590d"/>
+    <circle id="Ellipse_3" data-name="Ellipse 3" cx="850" cy="850" r="850" transform="translate(954 1008)" fill="#fff"/>
+    <g id="Group_1" data-name="Group 1" transform="translate(1277 1379)">
+      <text id="G" transform="translate(520 938)" fill="#0d1a65" font-size="500" font-family="Poppins-Bold, Poppins" font-weight="700"><tspan x="0" y="0">G</tspan></text>
+      <text id="R" transform="translate(165 365)" fill="#0d1a65" font-size="500" font-family="Poppins-Bold, Poppins" font-weight="700"><tspan x="0" y="0">R</tspan></text>
+      <rect id="Rectangle_1" data-name="Rectangle 1" width="85.5" height="544" transform="translate(194.5 382)" fill="#0d1a65"/>
+      <path id="Subtraction_1" data-name="Subtraction 1" d="M281,652.069h0v-.009c-9.662-40.505-41.624-74.023-85.5-89.661V0H281Z" transform="translate(606 13)" fill="#0d1a65"/>
+      <rect id="Rectangle_3" data-name="Rectangle 3" width="537" height="85.5" transform="translate(272 438)" fill="#0d1a65"/>
+    </g>
+  </g>
+</svg>
