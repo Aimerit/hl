@@ -1,14 +1,24 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { SimpleGrid } from '@chakra-ui/react';
 
-import Logo from '../helpers/Logo';
+import Greeting from '../core/login/Greeting';
+import LoginForm from '../core/login/LoginForm';
 
 function Login() {
+  const history = useHistory();
+
+  function handleSignIn(evt) {
+    evt.preventDefault();
+
+    history.push('/');
+  }
+
   return (
-    <div>
-      <h1>Login</h1>
-      <Logo />
-    </div>
+    <SimpleGrid columns={2} spacing={0}>
+      <Greeting />
+      <LoginForm onSignIn={handleSignIn} />
+    </SimpleGrid>
   );
 }
 

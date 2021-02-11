@@ -18,7 +18,6 @@ export default extendTheme({
   styles: {
     global: {
       body: {
-        fontFamily: '"Montserrat", sans-serif',
         color: '#1C1C1C'
       }
     }

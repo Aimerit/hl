@@ -1,14 +1,16 @@
 import React from 'react';
-import { Button } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
+
+import Navbar from './Navbar';
+import ContentContainer from './helpers/ContentContainer';
 
 function Main() {
   return (
-    <div>
-      <h1>Main</h1>
-      <Button colorScheme='primary' size='lg'>
-        Click me
-      </Button>
-    </div>
+    <Flex flexDirection='column' minH='100vh'>
+      <Navbar />
+
+      <ContentContainer></ContentContainer>
+    </Flex>
   );
 }
 
