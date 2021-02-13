@@ -20,8 +20,10 @@ export default styled(NavbarContainer)`
   padding: 0 1.5rem;
   height: 80px;
   position: sticky;
+  background: #ffffff;
   top: 0;
   left: 0;
+  z-index: 10;
 
   ::after {
     content: '';
@@ -30,6 +32,6 @@ export default styled(NavbarContainer)`
     bottom: 0;
     width: 100%;
     height: 1px;
-    background: #e9e9ec;
+    background: #f1f2f5;
   }
 `;

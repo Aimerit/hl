@@ -12,7 +12,7 @@ export const GreetingFooter = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  font-size: 14px;
+  font-size: 0.75rem;
 `;
 
 export const GreetingTitle = styled.h1`
@@ -21,7 +21,7 @@ export const GreetingTitle = styled.h1`
 `;
 
 export const GreetingSubTitle = styled.p`
-  font-size: 1rem;
+  font-size: 0.875rem;
   margin-top: 1rem;
 `;
 

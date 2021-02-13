@@ -18,7 +18,29 @@ export default extendTheme({
   styles: {
     global: {
       body: {
-        color: '#1C1C1C'
+        color: '#1C1C1C',
+        fontFamily: '"Montserrat", sans-serif'
+      }
+    }
+  },
+
+  fontSizes: {
+    xs: '10px',
+    sm: '12px',
+    md: '14px',
+    lg: '16px',
+    xl: '18px',
+    '2xl': '22px',
+    '3xl': '26px',
+    '4xl': '32px',
+    '5xl': '44px',
+    '6xl': '60px'
+  },
+
+  components: {
+    FormLabel: {
+      baseStyle: {
+        fontWeight: 600
       }
     }
   }
