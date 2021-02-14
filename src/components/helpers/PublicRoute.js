@@ -20,7 +20,7 @@ function PublicRoute({ path, component: Component, ...restProps }) {
 
 PublicRoute.propTypes = {
   path: PropTypes.string.isRequired,
-  component: PropTypes.node
+  component: PropTypes.elementType
 };
 
 export default PublicRoute;

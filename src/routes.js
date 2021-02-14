@@ -16,7 +16,10 @@ export const publicRoutes = [
 
 export const privateRoutes = [
   { key: uuidV1(), path: '/home', extactPath: true, component: HomePage },
-  { key: uuidV1(), path: '/home/stock-management', extactPath: true, component: StockManagementPage },
+  { key: uuidV1(), path: '/home/stock-management', component: StockManagementPage }
+];
+
+export const stockManagementPrivateRoutes = [
   { key: uuidV1(), path: '/home/stock-management/suppliers', component: SuppliersPage },
   { key: uuidV1(), path: '/home/stock-management/categories', component: CategoriesPage },
   { key: uuidV1(), path: '/home/stock-management/products', component: ProductsPage }

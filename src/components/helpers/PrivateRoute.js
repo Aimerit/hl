@@ -9,7 +9,7 @@ function PrivateRoute({ component: Component, ...restProps }) {
 }
 
 PrivateRoute.propTypes = {
-  component: PropTypes.node
+  component: PropTypes.elementType
 };
 
 export default PrivateRoute;

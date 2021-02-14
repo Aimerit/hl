@@ -42,7 +42,7 @@ export default styled(ModuleContainer)`
   min-width: 22.5rem;
   min-height: 22.5rem;
   padding: 3rem 2rem;
-  border: 1px solid #f1f2f5;
+  border: 1px solid #e7eaf3;
   border-radius: 5px;
   display: flex;
   flex-direction: column;

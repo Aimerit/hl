@@ -17,6 +17,6 @@ export default styled(ContentContainer)`
   flex: 1;
   display: flex;
   flex-direction: column;
-  background: #f9fbfd;
+  background: #f2f4f6;
   overflow: hidden;
 `;

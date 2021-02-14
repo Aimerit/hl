@@ -7,7 +7,7 @@ function Module({ variant = 'primary', module, onModuleClick }) {
   const { icon, title, description } = module;
 
   return (
-    <ModuleContainer onClick={onModuleClick}>
+    <ModuleContainer onClick={() => onModuleClick(module)}>
       <ModuleIcon src={icon} />
       <ModuleTitle variant={variant}>{title}</ModuleTitle>
       <ModuleDescription>{description}</ModuleDescription>

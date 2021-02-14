@@ -32,6 +32,6 @@ export default styled(NavbarContainer)`
     bottom: 0;
     width: 100%;
     height: 1px;
-    background: #f1f2f5;
+    background: #e7eaf3;
   }
 `;
