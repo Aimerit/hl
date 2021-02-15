@@ -3,11 +3,16 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import arrowLeftIcon from '../../../../assets/images/arrow-left.svg';
-import { childrenPropType } from '../../../../utils/default-prop-types';
+
 import colors from '../../../../config/colors';
 import dimens from '../../../../config/dimens';
 
-function Sidebar({ className, title, children, onBackClick }) {
+import SidebarMenu from './SidebarMenu';
+
+function displaySidebarMenuItems(menuItems = []) {
+  return menuItems.map(({ icon, title, url }, index) => <SidebarMenu key={index} icon={icon} title={title} url={url} />);
+}
+function Sidebar({ className, title, menuItems = [], onBackClick }) {
   return (
     <div className={className}>
       <div>
@@ -18,7 +23,7 @@ function Sidebar({ className, title, children, onBackClick }) {
           </div>
           <h5>{title}</h5>
         </div>
-        {children}
+        <div>{displaySidebarMenuItems(menuItems)}</div>
       </div>
     </div>
   );
@@ -27,7 +32,13 @@ function Sidebar({ className, title, children, onBackClick }) {
 Sidebar.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string,
-  children: childrenPropType,
+  menuItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      icon: PropTypes.any,
+      title: PropTypes.string,
+      url: PropTypes.string
+    })
+  ),
   onBackClick: PropTypes.func.isRequired
 };
 
@@ -90,6 +101,10 @@ export default styled(Sidebar)`
           margin-top: 1.5rem;
           color: ${colors.secondary};
         }
+      }
+
+      :last-child {
+        margin-top: 1rem;
       }
     }
   }

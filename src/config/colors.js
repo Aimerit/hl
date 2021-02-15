@@ -6,5 +6,6 @@ export default {
   secondaryLight: '#c2852f',
   secondaryDark: '#5f3d0c',
   black: '#1c1c1c',
-  gray: '#808080'
+  gray: '#808080',
+  white: '#fffffff'
 };

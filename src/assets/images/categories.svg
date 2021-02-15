@@ -1,6 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <g id="Rectangle_21" data-name="Rectangle 21" fill="#fff" stroke="#707070" stroke-width="1">
-    <rect width="24" height="24" stroke="none"/>
-    <rect x="0.5" y="0.5" width="23" height="23" fill="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="18.207" viewBox="0 0 24 18.207">
+  <g id="_x31_0_21_" transform="translate(0 -2.897)">
+    <g id="Group_6" data-name="Group 6">
+      <path id="Path_16" data-name="Path 16" d="M2.483,2.9A2.483,2.483,0,1,0,4.966,5.379,2.483,2.483,0,0,0,2.483,2.9Zm0,6.621A2.483,2.483,0,1,0,4.966,12,2.483,2.483,0,0,0,2.483,9.517Zm0,6.621a2.483,2.483,0,1,0,2.483,2.483A2.483,2.483,0,0,0,2.483,16.138ZM9.1,7.034H22.345a1.655,1.655,0,0,0,0-3.31H9.1a1.655,1.655,0,1,0,0,3.31Zm13.241,3.31H9.1a1.655,1.655,0,1,0,0,3.31H22.345a1.655,1.655,0,0,0,0-3.31Zm0,6.621H9.1a1.655,1.655,0,1,0,0,3.31H22.345a1.655,1.655,0,1,0,0-3.31Z" fill="gray"/>
+    </g>
   </g>
 </svg>
