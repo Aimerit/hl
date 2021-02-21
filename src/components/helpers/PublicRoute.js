@@ -10,7 +10,7 @@ function PublicRoute({ path, component: Component, ...restProps }) {
       path={path}
       {...restProps}
       render={function (props) {
-        if (path === '/' && session.isAuthenticate()) return <Redirect to='/home' />;
+        if (path !== '/' && session.isAuthenticate()) return <Redirect to='/home' />;
 
         return <Component {...props} />;
       }}
