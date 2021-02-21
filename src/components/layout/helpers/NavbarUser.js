@@ -21,7 +21,7 @@ function NavbarUser() {
       <Menu>
         <MenuButton as={IconButton} icon={<Icon as={MdKeyboardArrowDown} />} variant='ghost' />
         <MenuList>
-          <MenuItem fontSize='md' fontWeight={600} icon={<Icon as={BiLogOut} w={6} h={6} color={colors.black} />}>
+          <MenuItem fontSize='md' fontWeight={600} icon={<Icon as={BiLogOut} w={5} h={5} color={colors.black} />}>
             Déconnexion
           </MenuItem>
         </MenuList>

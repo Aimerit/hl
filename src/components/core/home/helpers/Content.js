@@ -4,4 +4,5 @@ import dimens from '../../../../config/dimens';
 
 export default styled.div`
   margin-left: ${dimens.sidebarWidth};
+  padding: 2rem;
 `;

@@ -19,7 +19,8 @@ export default extendTheme({
     global: {
       body: {
         color: '#1C1C1C',
-        fontFamily: '"Montserrat", sans-serif'
+        fontFamily: '"Montserrat", sans-serif',
+        fontSize: '0.875rem'
       }
     }
   },
@@ -41,6 +42,20 @@ export default extendTheme({
     FormLabel: {
       baseStyle: {
         fontWeight: 600
+      }
+    },
+
+    Table: {
+      baseStyle: {
+        th: {
+          fontWeight: 700,
+          textTransform: 'none',
+          fontFamily: '"Montserrat", sans-serif'
+        },
+
+        td: {
+          fontFamily: '"Montserrat", sans-serif'
+        }
       }
     }
   }

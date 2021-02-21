@@ -50,11 +50,13 @@ export default styled(SidebarMenu)`
       > svg {
         display: inline-block;
         margin-right: 1rem;
+        transition: all 300ms ease-in-out;
       }
 
       > span {
         color: ${colors.gray};
         font-size: 0.875rem;
+        transition: all 300ms ease-in-out;
       }
     }
 

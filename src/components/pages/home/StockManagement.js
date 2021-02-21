@@ -25,7 +25,7 @@ function StockManagement() {
   stockManagementPageViewModel.init({ history: useHistory() });
 
   return (
-    <Flex flex='1'>
+    <Flex flex='1' flexDirection='column'>
       <Sidebar title='Gestion des stocks' menuItems={menuItems} onBackClick={() => stockManagementPageViewModel.handleBackClick()} />
       <Content>
         <Switch>
