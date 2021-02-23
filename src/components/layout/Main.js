@@ -4,7 +4,7 @@ import { Flex } from '@chakra-ui/react';
 
 import { privateRoutes } from '../../routes';
 
-import PrivateRoute from '../helpers/PrivateRoute';
+import PrivateRoute from '../helpers/PublicRoute';
 import Navbar from './Navbar';
 import ContentContainer from './helpers/ContentContainer';
 

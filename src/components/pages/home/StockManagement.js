@@ -6,7 +6,7 @@ import { stockManagementPrivateRoutes } from '../../../routes';
 import sidebarMenuIcons from '../../../config/sidebar-menu-icons';
 import stockManagementPageViewModel from '../../../utils/view_models/stock-management-page';
 
-import PrivateRoute from '../../helpers/PrivateRoute';
+import PrivateRoute from '../../helpers/PublicRoute';
 import Sidebar from '../../core/home/helpers/Sidebar';
 import Content from '../../core/home/helpers/Content';
 
