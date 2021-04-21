@@ -14,7 +14,7 @@ export const ModuleIcon = styled.img`
 export const ModuleTitle = styled.h5`
   font-size: 1.125rem;
   font-weight: 700;
-  color: ${(props) => colors[props.variant] || colors.primary};
+  color: ${colors.white};
   margin: 1rem 0 0.5rem 0;
 `;
 
@@ -38,7 +38,7 @@ ModuleContainer.propTypes = {
 };
 
 export default styled(ModuleContainer)`
-  background: #ffffff;
+  background: ${colors.primary};
   min-width: 22.5rem;
   min-height: 22.5rem;
   padding: 3rem 2rem;
@@ -53,6 +53,6 @@ export default styled(ModuleContainer)`
   transition: all 300ms ease-in-out;
 
   :hover {
-    background: rgba(16, 32, 120, 0.1);
+    background: ${colors.primaryLight};
   }
 `;

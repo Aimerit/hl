@@ -38,7 +38,7 @@ export default styled(SidebarMenu)`
       width: 6px;
       height: 0px;
       border-radius: 0 5px 5px 0;
-      background: ${colors.white};
+      background: ${getIndicatorBackground()};
       transition: all 300ms ease-in-out;
     }
 
@@ -51,11 +51,15 @@ export default styled(SidebarMenu)`
         display: inline-block;
         margin-right: 1rem;
         transition: all 300ms ease-in-out;
+
+        path {
+          fill: ${getIconColor()};
+        }
       }
 
       > span {
-        color: ${colors.gray};
-        font-size: 0.875rem;
+        color: ${getTextColor()};
+        font-size: 0.75rem;
         transition: all 300ms ease-in-out;
       }
     }
@@ -63,18 +67,18 @@ export default styled(SidebarMenu)`
     :hover {
       ::before {
         height: 100%;
-        background: ${colors.primary};
+        background: ${getIndicatorBackground(false, true)};
       }
 
       > div {
         > svg {
           path {
-            fill: ${colors.primary};
+            fill: ${getIconColor(false, true)};
           }
         }
 
         > span {
-          color: ${colors.primary};
+          color: ${getTextColor(false, true)};
         }
       }
     }
@@ -83,23 +87,38 @@ export default styled(SidebarMenu)`
   &.active {
     > div {
       ::before {
-        content: '';
         height: 100%;
-        background: ${colors.primary};
+        background: ${getIndicatorBackground(true)};
       }
 
       > div {
         > svg {
           path {
-            fill: ${colors.primary};
+            fill: ${getIconColor(true)};
           }
         }
 
         > span {
-          color: ${colors.primary};
+          color: ${getTextColor(true)};
           font-weight: 700;
         }
       }
     }
   }
 `;
+
+function getIndicatorBackground(active = false, hovered = false) {
+  return getColor(active, hovered);
+}
+
+function getTextColor(active = false, hovered = false) {
+  return getColor(active, hovered);
+}
+
+function getIconColor(active = false, hovered = false) {
+  return getColor(active, hovered);
+}
+
+function getColor(active, hover) {
+  return active || hover ? colors.white : colors.grayLight;
+}

@@ -16,7 +16,7 @@ export const GreetingFooter = styled.div`
 `;
 
 export const GreetingTitle = styled.h1`
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 700;
 `;
 

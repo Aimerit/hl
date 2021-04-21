@@ -8,7 +8,7 @@ export default extendTheme({
       300: '#38329A',
       400: '#292295',
       500: '#101F78',
-      600: '#0D1A65',
+      600: '#464194',
       700: '#08145A',
       800: '#06114A',
       900: '#00003A'
@@ -18,21 +18,21 @@ export default extendTheme({
   styles: {
     global: {
       body: {
-        color: '#1C1C1C',
-        fontFamily: '"Montserrat", sans-serif',
-        fontSize: '0.875rem'
+        color: '#111111',
+        fontSize: '0.75rem',
+        fontFamily: "'Montserrat', sans-serif"
       }
     }
   },
 
   fontSizes: {
     xs: '10px',
-    sm: '12px',
-    md: '14px',
-    lg: '16px',
-    xl: '18px',
-    '2xl': '22px',
-    '3xl': '26px',
+    sm: '11px',
+    md: '12px',
+    lg: '14px',
+    xl: '17px',
+    '2xl': '20px',
+    '3xl': '23px',
     '4xl': '32px',
     '5xl': '44px',
     '6xl': '60px'
@@ -41,7 +41,7 @@ export default extendTheme({
   components: {
     FormLabel: {
       baseStyle: {
-        fontWeight: 600
+        fontWeight: 500
       }
     },
 
@@ -50,11 +50,7 @@ export default extendTheme({
         th: {
           fontWeight: 700,
           textTransform: 'none',
-          fontFamily: '"Montserrat", sans-serif'
-        },
-
-        td: {
-          fontFamily: '"Montserrat", sans-serif'
+          fontFamily: "'Montserrat', sans-serif"
         }
       }
     }

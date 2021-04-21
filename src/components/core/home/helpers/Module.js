@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ModuleContainer, { ModuleIcon, ModuleDescription, ModuleTitle } from './helpers/ModuleContainer';
+import ModuleContainer, { ModuleIcon, ModuleDescription, ModuleTitle } from './ModuleContainer';
 
 function Module({ variant = 'primary', module, onModuleClick }) {
   const { icon, title, description } = module;

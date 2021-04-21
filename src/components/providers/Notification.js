@@ -3,7 +3,8 @@ import { useToast } from '@chakra-ui/react';
 
 import { childrenPropType } from '../../utils/default-prop-types';
 
-const NotificationContext = createContext();
+export const NotificationContext = createContext();
+
 const notificationSettings = {
   position: 'top',
   duration: 5000,

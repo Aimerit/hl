@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { childrenPropType } from '../../../utils/default-prop-types';
+import { childrenPropType } from '../../../../utils/default-prop-types';
 
-import InnerContentContainer, { InnerContentHeader, InnerContentTitle, InnerContentActions } from './helpers/InnerContentContainer';
+import InnerContentContainer, { InnerContentHeader, InnerContentTitle, InnerContentActions } from './InnerContentContainer';
 
 function InnerContent({ title, actions, children }) {
   return (
     <InnerContentContainer>
       <InnerContentHeader>
-        <InnerContentTitle>{title}</InnerContentTitle>
+        {title && <InnerContentTitle>{title}</InnerContentTitle>}
         <InnerContentActions>{actions}</InnerContentActions>
       </InnerContentHeader>
       {children}
@@ -18,7 +18,7 @@ function InnerContent({ title, actions, children }) {
 }
 
 InnerContent.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   actions: PropTypes.node.isRequired,
   children: childrenPropType
 };

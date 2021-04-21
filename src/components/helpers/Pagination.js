@@ -58,9 +58,9 @@ function Pagination({ currentPage, pagesCount, visiblePagesCount = 5, onPageChan
   }
 
   return (
-    <Flex p={4} justifyContent='space-between'>
+    <Flex p={6} justifyContent='space-between'>
       <Box>
-        <PaginationSelect size='md' borderRadius={5} fontWeight={600} onChange={handleItemsCountPerPageChange}>
+        <PaginationSelect disabled={pagesCount === 0} size='md' borderRadius={5} fontWeight={600} onChange={handleItemsCountPerPageChange}>
           {itemsCountPerPageOptions.map((option, index) => (
             <option key={index} value={option}>
               {option}
@@ -86,7 +86,7 @@ function Pagination({ currentPage, pagesCount, visiblePagesCount = 5, onPageChan
           variant='outline'
           size='md'
           icon={<Icons.components.ArrowRight />}
-          disabled={currentPage === pagesCount}
+          disabled={pagesCount === 0 || currentPage === pagesCount}
           onClick={handleNextPage}
         />
       </Flex>

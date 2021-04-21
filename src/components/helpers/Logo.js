@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Image } from '@chakra-ui/react';
 import styled from 'styled-components';
 
-import logoIcon from '../../assets/images/logo.svg';
+import logoIcon from '../../assets/images/logo-bold.svg';
 
 export const logoSizes = Object.freeze({
   default: '4.75rem',

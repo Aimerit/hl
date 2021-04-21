@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import arrowLeftIcon from '../../../../assets/images/arrow-left.svg';
-
 import colors from '../../../../config/colors';
 import dimens from '../../../../config/dimens';
 
+import Icons from '../../../helpers/Icons';
 import SidebarMenu from './SidebarMenu';
 
 function displaySidebarMenuItems(menuItems = []) {
@@ -18,7 +17,7 @@ function Sidebar({ className, title, menuItems = [], onBackClick }) {
       <div>
         <div>
           <div onClick={onBackClick}>
-            <img src={arrowLeftIcon} alt='' />
+            <img src={Icons.arrowLeftIcon} alt='' />
             <span>Retour à l&apos;accueil</span>
           </div>
           <h5>{title}</h5>
@@ -53,7 +52,7 @@ export default styled(Sidebar)`
     width: 100%;
     height: 100%;
     overflow-y: auto;
-    background: #ffffff;
+    background: ${colors.primary};
     position: relative;
     display: flex;
     flex-direction: column;
@@ -76,7 +75,7 @@ export default styled(Sidebar)`
           display: flex;
           font-size: 12px;
           align-items: center;
-          color: ${colors.gray};
+          color: ${colors.grayLight};
           cursor: pointer;
 
           > img {

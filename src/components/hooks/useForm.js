@@ -16,11 +16,27 @@ export default function (onSubmit) {
     onSubmit(evt);
   }
 
+  function updateFormState(formStateUpdates = {}) {
+    const clonedStateUpdates = { ...formStateUpdates };
+    delete clonedStateUpdates.id;
+    delete clonedStateUpdates.createdAt;
+    delete clonedStateUpdates.updatedAt;
+    delete clonedStateUpdates.deleted;
+    setFormState((currentFormState) => ({ ...currentFormState, ...clonedStateUpdates }));
+  }
+
+  function resetFormState() {
+    setFormState({});
+    setFormErrors({});
+  }
+
   return {
     formState,
     formErrors,
     setFormErrors,
     handleChange,
-    handleSubmit
+    handleSubmit,
+    updateFormState,
+    resetFormState
   };
 }

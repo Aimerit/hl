@@ -4,16 +4,22 @@ import { Table, Thead, Tbody, Tr, Td, Th, Menu, MenuButton, MenuList, MenuItem, 
 import { MdMoreVert } from 'react-icons/md';
 
 import colors from '../../config/colors';
-import dateUtils from '../../utils/date-utils';
-import priceUtils from '../../utils/price-utils';
+import dateUtils from '../../utils/date';
+import priceUtils from '../../utils/price';
+import entitiesUtils from '../../utils/entities';
 
 import Card from '../helpers/Card';
+import Loader from '../helpers/Loader';
 import TableHeader from './TableHeader';
 import Pagination, { itemsCountPerPageOptions } from './Pagination';
+import TableEmpty from './TableEmpty';
 
 const dataTypes = Object.freeze({
   DATE: 'date',
-  PRICE: 'price'
+  PRICE: 'price',
+  CODE: 'code',
+  ADDRESS: 'address',
+  PHONE: 'phone'
 });
 
 function formatCellValue(column, item) {
@@ -23,7 +29,10 @@ function formatCellValue(column, item) {
 
   const strategies = {
     [dataTypes.DATE]: dateUtils.formatDate,
-    [dataTypes.PRICE]: priceUtils.formatPrice
+    [dataTypes.PRICE]: priceUtils.formatPrice,
+    [dataTypes.CODE]: entitiesUtils.formatCode,
+    [dataTypes.ADDRESS]: entitiesUtils.formatAddress,
+    [dataTypes.PHONE]: entitiesUtils.formatPhoneNumber
   };
 
   return strategies[dataType](value);
@@ -37,6 +46,8 @@ function displayCellContent(column, item) {
   if (Object.keys(item).includes(column.dataIndex)) {
     return column.render ? column.render(item) : formatCellValue(column, item);
   }
+
+  console.log(column, item);
 
   return column.render(item);
 }
@@ -66,7 +77,11 @@ function displayActions(actions, item) {
   );
 }
 
-function AppTable({ columns, dataSource, actions, onSearch }) {
+function displayNoDataBlock(noDataMessage, dataSource) {
+  return dataSource.length === 0 && <TableEmpty message={noDataMessage} />;
+}
+
+function AppTable({ columns, dataSource = [], actions, requesting = false, noDataMessage, onSearch }) {
   const [currentItems, setCurrentItems] = useState([]);
   const [currentItemsCountPerPage, setCurrentItemsCountPerPage] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
@@ -103,20 +118,22 @@ function AppTable({ columns, dataSource, actions, onSearch }) {
   }, [dataSource]);
 
   return (
-    <Card onClick={onSearch}>
-      <TableHeader />
+    <Card py='.5rem'>
+      <TableHeader onChange={onSearch} />
 
       <Table>
         <Thead>
           <Tr>
             {columns.map(({ key, title }) => (
-              <Th key={key} fontSize='md' color={colors.primary} paddingY='16px'>
+              <Th key={key} fontSize='md' color={colors.black} paddingY='16px'>
                 {title}
               </Th>
             ))}
-            <Th fontSize='md' color={colors.primary}>
-              Actions
-            </Th>
+            {actions && (
+              <Th fontSize='md' color={colors.black}>
+                Actions
+              </Th>
+            )}
           </Tr>
         </Thead>
 
@@ -133,6 +150,8 @@ function AppTable({ columns, dataSource, actions, onSearch }) {
           ))}
         </Tbody>
       </Table>
+
+      {requesting ? <Loader /> : displayNoDataBlock(noDataMessage, dataSource)}
 
       <Pagination
         currentPage={currentPage}
@@ -161,6 +180,8 @@ AppTable.propTypes = {
       onActionClick: PropTypes.func
     })
   ),
+  requesting: PropTypes.bool,
+  noDataMessage: PropTypes.string,
   onSearch: PropTypes.func.isRequired
 };
 

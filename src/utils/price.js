@@ -25,10 +25,6 @@ function extractAndFormatDecimalPart(priceParts) {
   return priceParts.length > 1 ? `.${priceParts[1]}` : '';
 }
 
-/**
- *
- * @param {Number} price
- */
 function formatPrice(price) {
   const roundedPrice = roundNumberToTwoDecimal(price);
   const priceParts = String(roundedPrice).split('.');
@@ -36,7 +32,7 @@ function formatPrice(price) {
   const integerPart = extractAndFormatIntegerPart(priceParts);
   const decimalPart = extractAndFormatDecimalPart(priceParts);
 
-  return `${integerPart}${decimalPart} €`.trim();
+  return `${integerPart}${decimalPart} FCFA`.trim();
 }
 
 export default { formatPrice };

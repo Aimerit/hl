@@ -5,7 +5,7 @@ import { Route, Redirect } from 'react-router-dom';
 import session from '../../utils/session';
 
 function PrivateRoute({ component: Component, ...restProps }) {
-  return <Route {...restProps} render={(props) => (session.isAuthenticate() ? <Component {...props} /> : <Redirect to='/login' />)} />;
+  return <Route {...restProps} render={(props) => (session.isAuthenticated() ? <Component {...props} /> : <Redirect to='/login' />)} />;
 }
 
 PrivateRoute.propTypes = {

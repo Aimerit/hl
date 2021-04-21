@@ -1,11 +1,7 @@
 import moment from 'moment';
 
-/**
- *
- * @param {Date} date
- */
 function formatDate(date) {
-  return moment(date).format('DD/MM/YYYY');
+  return moment(date).format('DD/MM/YYYY - HH:MM');
 }
 
 export default { formatDate };

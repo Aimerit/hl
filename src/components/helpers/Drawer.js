@@ -19,10 +19,10 @@ function AppDrawer({ title, shown, children, onHide, onSubmit }) {
               {children}
 
               <Flex justifyContent='flex-end' marginY={8}>
-                <Button type='button' variant='outline' mr={3} onClick={onHide}>
+                <Button type='button' variant='ghost' mr={3} onClick={onHide}>
                   Annuler
                 </Button>
-                <Button colorScheme='blue' type='submit'>
+                <Button colorScheme='primary' type='submit'>
                   Enregistrer
                 </Button>
               </Flex>
