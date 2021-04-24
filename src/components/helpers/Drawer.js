@@ -12,7 +12,7 @@ function AppDrawer({ title, shown, children, onHide, onSubmit }) {
       <DrawerOverlay>
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>{title}</DrawerHeader>
+          <DrawerHeader letterSpacing='-1px'>{title}</DrawerHeader>
 
           <DrawerBody>
             <Form noValidate onSubmit={onSubmit}>

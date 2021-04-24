@@ -95,10 +95,11 @@ export default styled(Sidebar)`
         }
 
         > h5 {
-          font-size: 1.25rem;
-          font-weight: 700;
+          font-size: 1.15rem;
+          font-weight: 600;
           margin-top: 1.5rem;
           color: ${colors.secondary};
+          letter-spacing: -1px;
         }
       }
 

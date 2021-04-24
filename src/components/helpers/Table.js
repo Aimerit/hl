@@ -47,8 +47,6 @@ function displayCellContent(column, item) {
     return column.render ? column.render(item) : formatCellValue(column, item);
   }
 
-  console.log(column, item);
-
   return column.render(item);
 }
 
@@ -125,12 +123,12 @@ function AppTable({ columns, dataSource = [], actions, requesting = false, noDat
         <Thead>
           <Tr>
             {columns.map(({ key, title }) => (
-              <Th key={key} fontSize='md' color={colors.black} paddingY='16px'>
+              <Th key={key} fontSize='md' color={colors.gray} paddingY='16px'>
                 {title}
               </Th>
             ))}
             {actions && (
-              <Th fontSize='md' color={colors.black}>
+              <Th fontSize='md' color={colors.gray}>
                 Actions
               </Th>
             )}
@@ -170,7 +168,8 @@ AppTable.propTypes = {
       key: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       dataIndex: PropTypes.string.isRequired,
-      dataType: PropTypes.oneOf(Object.values(dataTypes))
+      dataType: PropTypes.oneOf(Object.values(dataTypes)),
+      render: PropTypes.func
     })
   ).isRequired,
   dataSource: PropTypes.arrayOf(PropTypes.shape({})).isRequired,

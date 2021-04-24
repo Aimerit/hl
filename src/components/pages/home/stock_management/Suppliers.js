@@ -6,11 +6,13 @@ import dialogActions from '../../../../store/actions/ui/dialog';
 import { supplierDrawerTitles } from '../../../../utils/drawer-titles';
 import formValidation from '../../../../utils/form_validation';
 import { supplierFormFields } from '../../../../utils/form_fields';
+import entitiesUtils from '../../../../utils/entities';
 
 import { NotificationContext } from '../../../providers/Notification';
 import Table from '../../../helpers/Table';
 import Icons from '../../../helpers/Icons';
 import Drawer from '../../../helpers/Drawer';
+import Text from '../../../helpers/Text';
 import InnerContent from '../../../core/home/helpers/InnerContent';
 import CreateButton from '../../../core/home/helpers/CreateButton';
 import SupplierForm from '../../../core/home/stock_management/suppliers/SupplierForm';
@@ -85,12 +87,14 @@ function Suppliers() {
               title: 'Code',
               key: 'code',
               dataIndex: 'code',
-              dataType: 'code'
+              dataType: 'code',
+              render: ({ code }) => <Text weight={500}>{entitiesUtils.formatCode(code)}</Text>
             },
             {
               title: 'Nom commercial',
               key: 'companyName',
-              dataIndex: 'companyName'
+              dataIndex: 'companyName',
+              render: ({ companyName }) => <Text weight={500}>{companyName}</Text>
             },
             {
               title: 'Date de création',

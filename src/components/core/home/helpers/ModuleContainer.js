@@ -13,9 +13,10 @@ export const ModuleIcon = styled.img`
 
 export const ModuleTitle = styled.h5`
   font-size: 1.125rem;
-  font-weight: 700;
+  font-weight: 600;
   color: ${colors.white};
   margin: 1rem 0 0.5rem 0;
+  letter-spacing: -1px;
 `;
 
 export const ModuleDescription = styled.p`

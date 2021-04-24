@@ -6,8 +6,8 @@ export default extendTheme({
       100: '#706CB7',
       200: '#464194',
       300: '#38329A',
-      400: '#292295',
-      500: '#101F78',
+      400: '#101F78',
+      500: '#292295',
       600: '#464194',
       700: '#08145A',
       800: '#06114A',
@@ -48,7 +48,7 @@ export default extendTheme({
     Table: {
       baseStyle: {
         th: {
-          fontWeight: 700,
+          fontWeight: 500,
           textTransform: 'none',
           fontFamily: "'Montserrat', sans-serif"
         }

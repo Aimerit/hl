@@ -100,7 +100,7 @@ export default styled(SidebarMenu)`
 
         > span {
           color: ${getTextColor(true)};
-          font-weight: 700;
+          font-weight: 600;
         }
       }
     }
