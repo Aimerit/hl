@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import colors from '../../../../config/colors';
-import dimens from '../../../../config/dimens';
+import dimens from '../../../../config/dimensions';
 
 import Icons from '../../../helpers/Icons';
 import SidebarMenu from './SidebarMenu';
@@ -84,22 +84,36 @@ export default styled(Sidebar)`
           }
 
           > span {
-            transition: all 300ms ease-in-out;
+            position: relative;
+
+            ::after {
+              content: '';
+              position: absolute;
+              opacity: 0;
+              bottom: -1px;
+              left: 0;
+              width: 0;
+              height: 1px;
+              background: ${colors.grayLight};
+              transition: all 300ms ease-in-out;
+            }
           }
 
           :hover {
             > span {
-              text-decoration: underline;
+              ::after {
+                width: 100%;
+                opacity: 1;
+              }
             }
           }
         }
 
         > h5 {
-          font-size: 1.15rem;
+          font-size: 1.1rem;
           font-weight: 600;
           margin-top: 1.5rem;
-          color: ${colors.secondary};
-          letter-spacing: -1px;
+          color: ${colors.white};
         }
       }
 

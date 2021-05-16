@@ -14,7 +14,7 @@ abbr {
   border: none !important;
   border-radius: 10px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
-  font-size: 15px;
+  font-size: 0.75rem;
   padding: 0.5rem;
 }
 
@@ -48,14 +48,14 @@ button.react-calendar__navigation__label {
 .react-calendar__navigation__label {
   font-weight: bold;
   text-transform: capitalize;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 500 !important;
   font-family: 'Montserrat', sans-serif;
 }
 
 .react-calendar__month-view__weekdays {
   text-transform: uppercase !important;
-  font-size: 14px !important;
+  font-size: 0.75rem !important;
   font-weight: 600 !important;
   font-family: 'Montserrat', sans-serif;
 }

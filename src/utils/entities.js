@@ -20,4 +20,8 @@ function formatPhoneNumber(phone) {
   return phone;
 }
 
-export default { formatAddress, formatCode, formatPhoneNumber };
+function formatStatValue(value) {
+  return value || 0;
+}
+
+export default { formatAddress, formatCode, formatPhoneNumber, formatStatValue };

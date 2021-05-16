@@ -33,7 +33,7 @@ export default function (UnStyledLoading) {
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(16, 32, 120, 0.5);
+    background: rgba(13, 25, 90, 0.6);
     opacity: 0;
     z-index: -1;
 

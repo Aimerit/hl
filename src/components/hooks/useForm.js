@@ -3,6 +3,7 @@ import { useState, useCallback } from 'react';
 export default function (onSubmit) {
   const [formState, setFormState] = useState({});
   const [formErrors, setFormErrors] = useState({});
+  const [formDisabledFields, setFormDisabledFields] = useState([]);
 
   const handleChange = useCallback(({ name, value }) => {
     setFormState((currentFormState) => ({
@@ -18,10 +19,8 @@ export default function (onSubmit) {
 
   function updateFormState(formStateUpdates = {}) {
     const clonedStateUpdates = { ...formStateUpdates };
-    delete clonedStateUpdates.id;
-    delete clonedStateUpdates.createdAt;
-    delete clonedStateUpdates.updatedAt;
-    delete clonedStateUpdates.deleted;
+    const fieldsToDelete = ['id', 'created', 'updated', 'deleted', 'deletedAt'];
+    fieldsToDelete.forEach((field) => delete clonedStateUpdates[field]);
     setFormState((currentFormState) => ({ ...currentFormState, ...clonedStateUpdates }));
   }
 
@@ -33,7 +32,9 @@ export default function (onSubmit) {
   return {
     formState,
     formErrors,
+    formDisabledFields,
     setFormErrors,
+    setFormDisabledFields,
     handleChange,
     handleSubmit,
     updateFormState,

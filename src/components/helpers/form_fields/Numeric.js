@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NumberInput, NumberInputField, NumberInputStepper, NumberIncrementStepper, NumberDecrementStepper } from '@chakra-ui/react';
+import { NumberInput, NumberInputField } from '@chakra-ui/react';
 
 function Numeric({ name, placeholder, defaultValue, onChange, onBlur }) {
   function handleChange(value) {
@@ -12,12 +12,8 @@ function Numeric({ name, placeholder, defaultValue, onChange, onBlur }) {
   }
 
   return (
-    <NumberInput placeholder={placeholder} defaultValue={defaultValue} precision={2} onChange={handleChange} onBlur={handleBlur}>
+    <NumberInput name={name} placeholder={placeholder} defaultValue={defaultValue} precision={2} onChange={handleChange} onBlur={handleBlur}>
       <NumberInputField />
-      <NumberInputStepper>
-        <NumberIncrementStepper />
-        <NumberDecrementStepper />
-      </NumberInputStepper>
     </NumberInput>
   );
 }

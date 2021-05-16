@@ -40,6 +40,7 @@ export default styled(SidebarMenu)`
       border-radius: 0 5px 5px 0;
       background: ${getIndicatorBackground()};
       transition: all 300ms ease-in-out;
+      opacity: 0;
     }
 
     > div {
@@ -68,6 +69,7 @@ export default styled(SidebarMenu)`
       ::before {
         height: 100%;
         background: ${getIndicatorBackground(false, true)};
+        opacity: 1;
       }
 
       > div {
@@ -89,6 +91,7 @@ export default styled(SidebarMenu)`
       ::before {
         height: 100%;
         background: ${getIndicatorBackground(true)};
+        opacity: 1;
       }
 
       > div {

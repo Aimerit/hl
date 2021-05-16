@@ -26,3 +26,10 @@ export const supplierPropType = PropTypes.shape({
   email: PropTypes.string,
   officeAddress: addressPropType
 });
+
+export const optionsPropType = PropTypes.arrayOf(
+  PropTypes.shape({
+    label: PropTypes.string,
+    value: PropTypes.any
+  })
+);

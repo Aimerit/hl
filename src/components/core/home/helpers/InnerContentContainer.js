@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import colors from '../../../../config/colors';
 
 export const InnerContentHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin: 1.4rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 2rem 0;
+  gap: 2rem;
 `;
 
 export const InnerContentTitle = styled.h2`
@@ -17,8 +18,6 @@ export const InnerContentTitle = styled.h2`
 
 export const InnerContentActions = styled.div`
   flex: 1;
-  display: flex;
-  justify-content: flex-end;
 `;
 
 export default styled.div`

@@ -1,19 +1,29 @@
 import { httpClient, jsonContentType } from '../../api';
 
-async function getSuppliers() {
-  return httpClient.get('/suppliers');
+const baseUrl = '/suppliers';
+
+async function getSuppliers(params = {}) {
+  return httpClient.get(baseUrl, { params });
 }
 
-async function createSupplier(supplierData) {
-  return httpClient.post('/suppliers', supplierData, { headers: jsonContentType });
+async function createSupplier(data) {
+  return httpClient.post(baseUrl, data, { headers: jsonContentType });
 }
 
-async function updateSupplier(supplierId, supplierData) {
-  return httpClient.put(`/suppliers/${supplierId}`, supplierData, { headers: jsonContentType });
+async function updateSupplier(supplierId, data) {
+  return httpClient.put(`${baseUrl}/${supplierId}`, data, { headers: jsonContentType });
 }
 
 async function deleteSupplier(supplierId) {
-  return httpClient.delete(`/suppliers/${supplierId}`);
+  return httpClient.delete(`${baseUrl}/${supplierId}`);
 }
 
-export default { getSuppliers, createSupplier, updateSupplier, deleteSupplier };
+async function searchSuppliers(data) {
+  return httpClient.post(`${baseUrl}/search`, data);
+}
+
+async function getSuppliersAnalytics() {
+  return httpClient.get(`${baseUrl}/analytics`);
+}
+
+export default { getSuppliers, createSupplier, updateSupplier, deleteSupplier, searchSuppliers, getSuppliersAnalytics };

@@ -1,7 +1,16 @@
 import moment from 'moment';
+import { isValidValue } from '.';
 
 function formatDate(date) {
-  return moment(date).format('DD/MM/YYYY - HH:MM');
+  return isValidValue(date) ? moment(date).format('DD/MM/YYYY') : date;
 }
 
-export default { formatDate };
+function formatDateTime(date) {
+  return isValidValue(date) ? moment(date).format('DD/MM/YYYY - HH:MM') : date;
+}
+
+function today() {
+  return moment().toDate();
+}
+
+export default { formatDate, formatDateTime, today };

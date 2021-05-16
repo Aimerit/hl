@@ -15,7 +15,6 @@ function Text({ name, placeholder, defaultValue, onChange, onBlur }) {
 
   return <Input type='text' name={name} placeholder={placeholder} defaultValue={defaultValue} onChange={handleChange} onBlur={handleBlur} />;
 }
-
 Text.propTypes = {
   name: PropTypes.string,
   placeholder: PropTypes.string,

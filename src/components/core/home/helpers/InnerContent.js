@@ -9,6 +9,8 @@ function InnerContent({ title, actions, children }) {
   return (
     <InnerContentContainer>
       <InnerContentHeader>
+        <div></div>
+        <div></div>
         {title && <InnerContentTitle>{title}</InnerContentTitle>}
         <InnerContentActions>{actions}</InnerContentActions>
       </InnerContentHeader>

@@ -6,8 +6,8 @@ import { staffMemberPropType } from '../../../utils/default-prop-types';
 import accountViewModel from '../../../utils/view_models/account';
 
 import { HStack, VStack, Avatar, Text, Menu, Icon, MenuButton, MenuList, MenuItem, IconButton } from '@chakra-ui/react';
-import { MdKeyboardArrowDown } from 'react-icons/md';
-import { BiLogOut } from 'react-icons/bi';
+import Icons from '../../helpers/Icons';
+import IconContainer from '../../helpers/IconContainer';
 
 function NavbarUser({ user = {}, onSignOut }) {
   return (
@@ -22,9 +22,9 @@ function NavbarUser({ user = {}, onSignOut }) {
         </Text>
       </VStack>
       <Menu>
-        <MenuButton as={IconButton} icon={<Icon as={MdKeyboardArrowDown} />} variant='ghost' />
+        <MenuButton as={IconButton} icon={<Icon as={Icons.components.ArrowKeyboardDown} />} variant='ghost' />
         <MenuList>
-          <MenuItem fontSize='md' fontWeight={600} icon={<Icon as={BiLogOut} w={5} h={5} color={colors.black} />} onClick={onSignOut}>
+          <MenuItem fontSize='md' fontWeight={500} icon={<IconContainer icon={Icons.components.Logout} />} onClick={onSignOut}>
             Déconnexion
           </MenuItem>
         </MenuList>

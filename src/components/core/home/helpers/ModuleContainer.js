@@ -7,8 +7,8 @@ import { childrenPropType } from '../../../../utils/default-prop-types';
 
 export const ModuleIcon = styled.img`
   display: inline-block;
-  width: 6.25rem;
-  height: 6.25rem;
+  width: 6rem;
+  min-height: 6rem;
 `;
 
 export const ModuleTitle = styled.h5`
@@ -16,7 +16,6 @@ export const ModuleTitle = styled.h5`
   font-weight: 600;
   color: ${colors.white};
   margin: 1rem 0 0.5rem 0;
-  letter-spacing: -1px;
 `;
 
 export const ModuleDescription = styled.p`

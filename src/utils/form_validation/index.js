@@ -1,3 +1,4 @@
+import { isValidValue } from '..';
 import { isNullish, isEmailValid } from '../data_validation';
 
 function validateForm(formState = {}, formFields = []) {
@@ -25,13 +26,11 @@ function validateFieldValue(value, field = {}) {
   const { type, dataType, pattern, required = false } = field;
 
   validateValueRequirement(value, required, fieldValidation);
-  if (fieldValidation.validField && required) {
-    validateValueType(value, type, fieldValidation);
-    if (fieldValidation.validField) {
-      validateValueDataType(value, dataType, fieldValidation);
-      validateValuePattern(value, pattern, fieldValidation);
-    }
-  }
+  if (!fieldValidation.validField || !isValidValue(value)) return fieldValidation;
+
+  if (type) validateValueType(value, type, fieldValidation);
+  if (dataType) validateValueDataType(value, dataType, fieldValidation);
+  if (pattern) validateValuePattern(value, pattern, fieldValidation);
 
   return fieldValidation;
 }
@@ -39,14 +38,14 @@ function validateFieldValue(value, field = {}) {
 function validateValueRequirement(value, required, fieldValidation) {
   if (required && isNullish(value)) {
     fieldValidation.validField = false;
-    fieldValidation.errorMessage = 'is required';
+    fieldValidation.errorMessage = 'est obligatoire';
   }
 }
 
 function validateValueType(value, type, fieldValidation) {
   if (typeof value !== type) {
     fieldValidation.validField = false;
-    fieldValidation.errorMessage = `must be of type ${type}`;
+    fieldValidation.errorMessage = `est non valide`;
   }
 }
 
@@ -55,14 +54,14 @@ function validateValueDataType(value, dataType, fieldValidation) {
   if (!dataType || !Object.keys(dataTypeValidationStrategies).includes(dataType)) return;
   if (!dataTypeValidationStrategies[dataType](value)) {
     fieldValidation.validField = false;
-    fieldValidation.errorMessage = `must be a valid ${dataType}`;
+    fieldValidation.errorMessage = `est non valide`;
   }
 }
 
 function validateValuePattern(value, pattern, fieldValidation) {
   if (pattern && !pattern.test(value)) {
     fieldValidation.validField = false;
-    fieldValidation.errorMessage = `is not valid`;
+    fieldValidation.errorMessage = `est non valide`;
   }
 }
 

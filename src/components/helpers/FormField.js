@@ -10,6 +10,7 @@ import Tel from './form_fields/Tel';
 import DatePicker from './form_fields/DatePicker';
 import DateTimePicker from './form_fields/DateTimePicker';
 import Select from './form_fields/Select';
+import Textarea from './form_fields/Textarea';
 
 const formFieldTypes = Object.freeze({
   TEXT: 'text',
@@ -22,12 +23,12 @@ const formFieldTypes = Object.freeze({
   SELECT: 'select',
   RADIO: 'radio',
   CHECKBOX: 'checkbox',
-  RADIO_GROUP: 'radio-group',
+  RADIO_GROUP: 'radiogroup',
   SWITCH: 'swicth',
-  TEXT_AREA: 'text-area'
+  TEXT_AREA: 'textarea'
 });
 
-function displayFormField(type, name, placeholder, defaultValue, options, onChange, onBlur) {
+function displayFormField({ type, ...restProps }) {
   const components = {
     [formFieldTypes.TEXT]: Text,
     [formFieldTypes.NUMBER]: Numeric,
@@ -36,18 +37,19 @@ function displayFormField(type, name, placeholder, defaultValue, options, onChan
     [formFieldTypes.TEL]: Tel,
     [formFieldTypes.DATE]: DatePicker,
     [formFieldTypes.DATE_TIME]: DateTimePicker,
-    [formFieldTypes.SELECT]: Select
+    [formFieldTypes.SELECT]: Select,
+    [formFieldTypes.TEXT_AREA]: Textarea
   };
   const ChoosenComponent = components[type];
 
-  return cloneElement(<ChoosenComponent />, { name, placeholder, defaultValue, options, onChange, onBlur });
+  return cloneElement(<ChoosenComponent />, restProps);
 }
 
-function FormField({ type, name, label, placeholder, defaultValue, options, error, required = false, disabled = false, onChange, onBlur }) {
+function FormField({ type, name, label, placeholder, defaultValue, options, error, required = false, disabled = false, selectFirstOptionOnMount = true, min, onChange, onBlur }) {
   return (
     <FormControl isInvalid={!!error} isRequired={required} isDisabled={disabled}>
       {label && <FormLabel color='gray.700'>{label}</FormLabel>}
-      {displayFormField(type, name, placeholder, defaultValue, options, onChange, onBlur)}
+      {displayFormField({ type, name, placeholder, defaultValue, options, selectFirstOptionOnMount, min, onChange, onBlur })}
       {error && <FormErrorMessage>{error}</FormErrorMessage>}
     </FormControl>
   );
@@ -65,6 +67,8 @@ FormField.propTypes = {
       value: PropTypes.any
     })
   ),
+  selectFirstOptionOnMount: PropTypes.bool,
+  min: PropTypes.any,
   error: PropTypes.string,
   required: PropTypes.bool,
   disabled: PropTypes.bool,

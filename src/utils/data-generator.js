@@ -14,4 +14,8 @@ function generateSuppliers() {
     }));
 }
 
-export default { generateSuppliers };
+function generateText() {
+  return faker.lorem.text();
+}
+
+export default { generateSuppliers, generateText };

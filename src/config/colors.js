@@ -8,5 +8,17 @@ export default {
   black: '#1c1c1c',
   gray: '#808080',
   grayLight: '#adadad',
-  white: '#ffffff'
+  white: '#ffffff',
+  table: {
+    header: '#f2f2f8'
+  },
+  disabled: '#c5c5c5',
+  success: '#ffb26b',
+  warning: '#e2b844',
+  error: '#e46526',
+  arrow: '#acacac',
+  sortingArrow: '#99a3ac',
+  card: {
+    border: '#e7eaf3'
+  }
 };

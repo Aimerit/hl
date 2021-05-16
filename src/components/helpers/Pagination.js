@@ -7,21 +7,7 @@ import PaginationSelect from './PaginationSelect';
 
 export const itemsCountPerPageOptions = [5, 10, 20];
 
-function initVisiblePages(pagesCount = 0) {
-  return Array(pagesCount)
-    .fill()
-    .map((value, index) => index + 1);
-}
-
-function getPageIndex(page) {
-  return page - 1;
-}
-
-function getPage(pageIndex) {
-  return pageIndex + 1;
-}
-
-function Pagination({ currentPage, pagesCount, visiblePagesCount = 5, onPageChange, onItemsCountPerPageChange }) {
+export default function Pagination({ currentPage, pagesCount, visiblePagesCount = 5, onPageChange, onItemsCountPerPageChange }) {
   const [visiblePages, setVisiblePages] = useState([]);
   const [firstVisiblePageIndex, setFirstVisiblePageIndex] = useState(0);
   const [lastVisiblePageIndex, setLastVisiblePageIndex] = useState(visiblePagesCount);
@@ -69,31 +55,17 @@ function Pagination({ currentPage, pagesCount, visiblePagesCount = 5, onPageChan
         </PaginationSelect>
       </Box>
       <Flex flex={1} justifyContent='flex-end'>
-        <IconButton
-          variant='outline'
-          size='md'
-          icon={<Icons.components.ArrowLeft />}
-          marginEnd={2}
-          disabled={currentPage === 1}
-          onClick={handlePrevPage}
-        />
+        <IconButton variant='outline' size='md' icon={<Icons.components.ArrowLeft />} marginEnd={2} disabled={currentPage === 1} onClick={handlePrevPage} />
         {visiblePages.slice(firstVisiblePageIndex, lastVisiblePageIndex).map((page, index) => (
           <Button key={index} size='md' variant='outline' marginEnd={2} disabled={page === currentPage} onClick={() => onPageChange(page)}>
             {page}
           </Button>
         ))}
-        <IconButton
-          variant='outline'
-          size='md'
-          icon={<Icons.components.ArrowRight />}
-          disabled={pagesCount === 0 || currentPage === pagesCount}
-          onClick={handleNextPage}
-        />
+        <IconButton variant='outline' size='md' icon={<Icons.components.ArrowRight />} disabled={pagesCount === 0 || currentPage === pagesCount} onClick={handleNextPage} />
       </Flex>
     </Flex>
   );
 }
-
 Pagination.propTypes = {
   currentPage: PropTypes.number.isRequired,
   pagesCount: PropTypes.number.isRequired,
@@ -102,4 +74,16 @@ Pagination.propTypes = {
   onItemsCountPerPageChange: PropTypes.func.isRequired
 };
 
-export default Pagination;
+function initVisiblePages(pagesCount = 0) {
+  return Array(pagesCount)
+    .fill()
+    .map((value, index) => index + 1);
+}
+
+function getPageIndex(page) {
+  return page - 1;
+}
+
+function getPage(pageIndex) {
+  return pageIndex + 1;
+}

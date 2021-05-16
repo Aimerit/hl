@@ -48,7 +48,7 @@ export default extendTheme({
     Table: {
       baseStyle: {
         th: {
-          fontWeight: 500,
+          fontWeight: 600,
           textTransform: 'none',
           fontFamily: "'Montserrat', sans-serif"
         }

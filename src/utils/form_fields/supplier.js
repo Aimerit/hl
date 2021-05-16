@@ -11,14 +11,12 @@ export default [
     property: 'email',
     label: 'Adresse email',
     type: 'string',
-    dataType: 'email',
-    required: true
+    dataType: 'email'
   },
   {
     property: 'phone',
     label: 'Téléphone',
-    type: 'string',
-    required: true
+    type: 'string'
   },
   {
     property: 'officeAddress',

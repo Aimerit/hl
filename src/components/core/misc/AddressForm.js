@@ -7,7 +7,7 @@ import { addressPropType } from '../../../utils/default-prop-types';
 
 import FormField from '../../helpers/FormField';
 
-export default function AddressForm({ property, address = {}, formErrors = {}, onChange }) {
+export default function AddressForm({ property, required = false, address = {}, formErrors = {}, onChange }) {
   const [formState, setFormState] = useState(address);
 
   function handleAddressChange({ name, value }) {
@@ -19,37 +19,16 @@ export default function AddressForm({ property, address = {}, formErrors = {}, o
   return (
     <VStack spacing={4}>
       <HStack spacing={4} width='100%'>
-        <FormField
-          type='select'
-          name='city'
-          label='Ville'
-          options={addressCitiesOptions}
-          defaultValue={address.city}
-          error={formErrors.city}
-          onChange={handleAddressChange}
-        />
-        <FormField
-          type='text'
-          name='neighborhood'
-          label='Quartier'
-          defaultValue={address.neighborhood}
-          error={formErrors.neighborhood}
-          onChange={handleAddressChange}
-        />
+        <FormField type='select' name='city' label='Ville' options={addressCitiesOptions} defaultValue={address.city} error={formErrors.city} required={required} onChange={handleAddressChange} />
+        <FormField type='text' name='neighborhood' label='Quartier' defaultValue={address.neighborhood} error={formErrors.neighborhood} required={required} onChange={handleAddressChange} />
       </HStack>
-      <FormField
-        type='text'
-        name='indication'
-        label='Indication'
-        defaultValue={address.indication}
-        error={formErrors.indication}
-        onChange={handleAddressChange}
-      />
+      <FormField type='text' name='indication' label='Indication' defaultValue={address.indication} error={formErrors.indication} onChange={handleAddressChange} />
     </VStack>
   );
 }
 AddressForm.propTypes = {
   property: PropTypes.string.isRequired,
+  required: PropTypes.bool,
   address: addressPropType,
   formErrors: PropTypes.shape({}),
   onChange: PropTypes.func.isRequired
